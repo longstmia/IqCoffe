@@ -29,7 +29,7 @@ export const ShopList: React.FC = () => {
               key={shop.id}
               name={shop.name}
               address={shop.address}
-              pattern={shop.pattern}
+              index={shop.id}
             />
           ))}
         </div>

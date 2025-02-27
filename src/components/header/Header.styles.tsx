@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import hederIcon from '../../assets/pattern/header.svg';
 
 export const Head = styled.header`
   position: fixed;
@@ -6,10 +7,9 @@ export const Head = styled.header`
   left: 0;
   width: 100%;
   height: 88px;
-  background-color: #000000;
-  background-size: 200px 200px;
-  background-repeat: repeat;
-  background-blend-mode: overlay;
+  background-color: #242424;
+  background-image: url(${hederIcon});
+
   color: white;
   display: flex;
   align-items: flex-start;

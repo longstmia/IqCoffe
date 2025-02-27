@@ -1,17 +1,23 @@
 import styled from 'styled-components';
+import hederIcon from '../../assets/pattern/header.svg';
 
 export const FooterContainer = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
+  gap: 20px;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 88px;
-  background-color: #000000;
+  z-index: 1000;
+
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  background-color: #242424;
+  background-image: url(${hederIcon});
 `;
 
 export const FooterItem = styled.div`
@@ -23,8 +29,8 @@ export const FooterItem = styled.div`
   color: #fff;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     margin-bottom: 8px;
   }
 
