@@ -79,4 +79,4 @@ const parus = {
   ],
 };
 
-module.exports = parus
+module.exports = parus;

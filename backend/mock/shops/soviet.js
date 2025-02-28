@@ -59,5 +59,4 @@ const soviet = {
   ],
 };
 
-
-module.exports = soviet
+module.exports = soviet;

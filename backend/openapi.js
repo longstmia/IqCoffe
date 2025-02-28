@@ -332,8 +332,8 @@ const promoExample = [
 ];
 
 const userExample = {
-  'name': 'Сусанна Аксакова',
-  'avatar': '003-superhero',
+  name: 'Сусанна Аксакова',
+  avatar: '003-superhero',
 };
 
 const swagger = {
@@ -496,7 +496,8 @@ const swagger = {
             description: 'Successful operation',
           },
           418: {
-            description: 'В ответе при "shop: ocean" всегда будет приходить 418-я ошибка',
+            description:
+              'В ответе при "shop: ocean" всегда будет приходить 418-я ошибка',
           },
         },
       },

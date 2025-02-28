@@ -53,4 +53,4 @@ const ocean = {
   photos: [],
 };
 
-module.exports = ocean
+module.exports = ocean;

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-//   Details,
-//   Info,
-//   InfoIcon,
-//   InfoText,
-//   Photo,
-//   GoButton;
+
+interface CardContainerProps {
+  color: string;
+  pattern: string;
+}
+
 export const CardsWrapper = styled.div`
   display: flex;
   gap: 16px;
@@ -16,16 +16,21 @@ export const CardsWrapper = styled.div`
     margin-bottom: 100px;
   }
 `;
+export const CardContainer = styled.div<CardContainerProps>`
+  background-color: ${(props) => props.color};
+  background-image: ${(props) =>
+    props.pattern ? `url(${props.pattern})` : 'none'};
+  background-position: center;
+  background-repeat: repeat;
 
-export const CardContainer = styled.div<{ color: string; pattern: string }>`
   flex: 0 0 auto;
   width: 95%;
   scroll-snap-align: start;
-  background-color: ${({ color }) => color};
-  background-image: ${({ pattern }) => pattern};
-  border-radius: 0px 15px 15px 15px;
+  border-radius: 0px 0px 15px 0px;
   overflow: visible;
   position: relative;
+  padding-bottom: 4px;
+  margin-bottom: -10px;
 `;
 
 export const CardUp = styled.div`

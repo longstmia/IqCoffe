@@ -1,5 +1,5 @@
 import React from 'react';
-import {Head, Text, Logo} from './Header.styles'
+import { Head, Text, Logo } from './Header.styles';
 
 const Header = () => (
   <Head>

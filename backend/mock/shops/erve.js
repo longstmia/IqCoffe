@@ -79,4 +79,4 @@ const erve = {
   ],
 };
 
-module.exports = erve
+module.exports = erve;

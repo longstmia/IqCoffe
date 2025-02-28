@@ -6,16 +6,9 @@ const cors = require('cors');
 const sampleSize = require('lodash.samplesize');
 
 const swaggerUI = require('swagger-ui-express');
-const {
-  shopsData,
-  shopsItems,
-  detailData,
-  shopNames,
-} = require('./data');
+const { shopsData, shopsItems, detailData, shopNames } = require('./data');
 const names = require('./mock/names');
 const avatars = require('./mock/avatars');
-
-
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swagger));
 
@@ -30,31 +23,25 @@ const findShopBySlug = (slug) => shopsData.find((item) => item.slug === slug);
 // catalog
 app.get('/api/shops/', (req, res) => {
   if (!shopsData) {
-    return res.status(500)
-      .send(`Shop list is not found`);
+    return res.status(500).send(`Shop list is not found`);
   }
   res.send(shopsData);
 });
 
 app.get('/api/catalog/', (req, res) => {
-    res.status(400)
-      .send(`Maybe you forgot a shop slug?`);
+  res.status(400).send(`Maybe you forgot a shop slug?`);
 });
 
 app.get('/api/catalog/:shop', (req, res) => {
-  const {
-    shop: shopName,
-  } = req.params;
+  const { shop: shopName } = req.params;
   const shop = findShopBySlug(shopName);
 
   if (!shop) {
-    return res.status(404)
-      .send(`Shop with name "${shopName}" is not found`);
+    return res.status(404).send(`Shop with name "${shopName}" is not found`);
   }
   const products = shopsItems[shopName];
   if (!products) {
-    return res.status(404)
-      .send(`Shop with name "${shopName}" is not found`);
+    return res.status(404).send(`Shop with name "${shopName}" is not found`);
   }
   res.send({
     categories: products,
@@ -63,22 +50,17 @@ app.get('/api/catalog/:shop', (req, res) => {
 });
 
 app.get('/api/catalog/:shop/:item', (req, res) => {
-  const {
-    item,
-    shop: shopName,
-  } = req.params;
+  const { item, shop: shopName } = req.params;
   const shop = findShopBySlug(shopName);
   if (!shop) {
-    return res.status(404)
-      .send(`Shop with name "${shopName}" is not found`);
+    return res.status(404).send(`Shop with name "${shopName}" is not found`);
   }
   if (!(item in detailData)) {
-    return res.status(404)
-      .send(`Product with name "${item}" is not found`);
+    return res.status(404).send(`Product with name "${item}" is not found`);
   }
   const product = { ...detailData[item] };
 
-  if ((shopName === shopNames.novin) && (item === 'latte')) {
+  if (shopName === shopNames.novin && item === 'latte') {
     product.price = '229';
   }
 
@@ -89,25 +71,25 @@ app.get('/api/catalog/:shop/:item', (req, res) => {
 });
 
 app.post('/api/catalog/promo', (req, res) => {
-  const {
-    shop: shopName,
-    currentItem,
-  } = req.body;
+  const { shop: shopName, currentItem } = req.body;
 
   if (!shopName || !currentItem) {
-    return res.status(404)
+    return res
+      .status(404)
       .send(`Parameters shop and/or currentItem are missing in request body`);
   }
   const shop = findShopBySlug(shopName);
   if (!shop) {
-    return res.status(404)
-      .send(`Shop with name "${shopName}" is not found`);
+    return res.status(404).send(`Shop with name "${shopName}" is not found`);
   }
   let list = [];
-  Object.entries(shopsItems[shopName])
-    .forEach(([_, item]) => item.lists
-      .forEach((el) => el.items
-        .forEach((element) => element.slug !== currentItem && list.push(element))));
+  Object.entries(shopsItems[shopName]).forEach(([_, item]) =>
+    item.lists.forEach((el) =>
+      el.items.forEach(
+        (element) => element.slug !== currentItem && list.push(element),
+      ),
+    ),
+  );
   const promo = sampleSize(list, getRandomInt(4));
 
   res.json(promo);
@@ -115,37 +97,33 @@ app.post('/api/catalog/promo', (req, res) => {
 
 // payment
 app.post('/api/payment', (req, res) => {
-  const {
-    shop,
-    basket,
-    time,
-  } = req.body;
+  const { shop, basket, time } = req.body;
 
   if (!basket?.length) {
-    return res.status(400)
-      .send(`Basket is empty`);
+    return res.status(400).send(`Basket is empty`);
   }
 
   const localShop = findShopBySlug(shop);
   if (!localShop) {
-    return res.status(404)
-      .send(`Shop with name "${shop}" is not found`);
+    return res.status(404).send(`Shop with name "${shop}" is not found`);
   }
 
   const id = new Date().getTime();
   const orderTime = +time + +(Math.floor(Math.random() * 4) || 1);
 
   if (shop === shopNames.ocean) {
-    return res.status(418)
-      .send('Internal server error ¯\\_(ツ)_/¯');
+    return res.status(418).send('Internal server error ¯\\_(ツ)_/¯');
   }
 
-  setTimeout(() => res.json({
-    success: true,
-    orderId: id,
-    time: orderTime,
-  }), 3000);
-
+  setTimeout(
+    () =>
+      res.json({
+        success: true,
+        orderId: id,
+        time: orderTime,
+      }),
+    3000,
+  );
 });
 
 // user

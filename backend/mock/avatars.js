@@ -32,7 +32,7 @@ const avatars = [
   '036-robot-1',
   '037-superhero-22',
   '038-superhero-23',
-  'avatar'
-]
+  'avatar',
+];
 
-module.exports = avatars
+module.exports = avatars;

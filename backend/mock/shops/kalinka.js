@@ -74,4 +74,4 @@ const kalinka = {
   ],
 };
 
-module.exports = kalinka
+module.exports = kalinka;

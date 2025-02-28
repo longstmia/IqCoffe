@@ -79,4 +79,4 @@ const novin = {
   ],
 };
 
-module.exports = novin
+module.exports = novin;

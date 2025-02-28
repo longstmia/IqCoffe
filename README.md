@@ -3,52 +3,62 @@
 IQCoffe для стажеров
 
 #### Версия Node.js:
+
 ```
 ^16
 ```
 
 Установить пакеты в корне папки.
+
 ### `npm i`
 
 Перейти в папку backend установить пакеты для бека.
+
 ### `npm i`
 
 ## Скрипты
+
 #### Запустить проект (бэкенд + клиент):
+
 ```
 npm run start
 ```
 
 #### Запустить отдельно клиент:
+
 ```
 npm run client
 ```
 
 #### Запустить отдельно бэкенд:
+
 ```
 npm run server
 ```
 
 #### Проверка ESLint:
+
 ```
 npm run lint
 ```
 
 #### Проверка ESLint c авто исправлением:
+
 ```
 npm run lint:fix
 ```
 
 #### Проверка Stylelint:
+
 ```
 npm run stylelint
 ```
 
 #### Проверка Stylelint c авто исправлением:
+
 ```
 npm run stylelint:fix
 ```
-
 
 Реакт приложение запускается за порту 3000
 Бекенд запускается на парту 3001
@@ -56,11 +66,13 @@ npm run stylelint:fix
 Описание методов в Swagger (OpenAPI)
 
 http://localhost:3001/api-docs
+
 <!-- ### `` -->
 
 ## Code style
 
-В проекте используется [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/) и [Prettier](https://prettier.io/).  
+В проекте используется [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/) и [Prettier](https://prettier.io/).
+
 ### Плагины ESLint:
 
 - [Airbnb eslint config](https://www.npmjs.com/package/eslint-config-airbnb);
@@ -79,7 +91,8 @@ http://localhost:3001/api-docs
 необходимо зайти в документацию и, при наличии возможности, сконфигурировать с нужными опциями, а не просто выключить правило.
 
 ### Опционально:
-Рекомендую попробовать включить в `.eslintrc.json` плагин [fp](https://github.com/jfmengels/eslint-plugin-fp) 
+
+Рекомендую попробовать включить в `.eslintrc.json` плагин [fp](https://github.com/jfmengels/eslint-plugin-fp)
 и попробовать пописать с ним на функциональном стиле 🙂
 
 ### Пакеты Stylelint:
@@ -94,6 +107,7 @@ http://localhost:3001/api-docs
 ### !!! Stylelint настроен на работу cо styled components !!!
 
 Для того чтобы переключить режим работы на `css` и `scss`, нужно отредактировать конфигурационный файл:
+
 ```
 // stylelint.js
 
@@ -104,4 +118,3 @@ module.exports = {
 
   ...
 ```
-

@@ -6,15 +6,15 @@ import paymentIcon from '../../assets/footer/payment.svg';
 
 const Footer: React.FC = () => {
   const footerItems = [
-    { icon: firstIcon, label: 'IQ-Coffee' },
-    { icon: mapMarkerIcon, label: 'Кофейни' },
-    { icon: paymentIcon, label: 'К оплате' },
+    { id: 'iq-coffee', icon: firstIcon, label: 'IQ-Coffee' },
+    { id: 'coffee-shops', icon: mapMarkerIcon, label: 'Кофейни' },
+    { id: 'payment', icon: paymentIcon, label: 'К оплате' },
   ];
 
   return (
     <FooterContainer>
-      {footerItems.map((item, index) => (
-        <FooterItem key={index}>
+      {footerItems.map((item) => (
+        <FooterItem key={item.id}>
           <img src={item.icon} alt={item.label} />
           <span>{item.label}</span>
         </FooterItem>
