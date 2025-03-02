@@ -17,28 +17,43 @@ import {
   ButtonBlock,
   GoButton,
 } from './ShopCard.styles';
-import {
-  photos,
-  patterns,
-  categories,
-  timetable,
-} from '../shopcard/ShopCard.constants';
+import { photos, categories, timetable } from './ShopCard.constants';
+
+import squarePattern from '../../assets/pattern/square.svg';
+import diamondsPattern from '../../assets/pattern/diamonds.svg';
+import leavesPattern from '../../assets/pattern/leaves.svg';
+import hexagonsPattern from '../../assets/pattern/hexagons.svg';
+import cloudsPattern from '../../assets/pattern/clouds.svg';
 
 interface ShopCardProps {
   name: string;
   address: string;
-  index: number;
+  stylebook: {
+    mainColor: string;
+    secondColor: string;
+    opacity: string;
+    pattern: string;
+  };
 }
+const patternMap: { [key: string]: string } = {
+  square: squarePattern,
+  diamonds: diamondsPattern,
+  leaves: leavesPattern,
+  hexagons: hexagonsPattern,
+  clouds: cloudsPattern,
+};
 
-const ShopCard: React.FC<ShopCardProps> = ({ name, address, index }) => {
-  const pattern = patterns[0];
+const ShopCard: React.FC<ShopCardProps> = ({ name, address, stylebook }) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const toggleDetails = () => {
     setIsDetailsOpen(!isDetailsOpen);
   };
+
+  const patternImage = patternMap[stylebook.pattern] || '';
+
   return (
     <CardsWrapper>
-      <CardContainer color={'#383838'} pattern={pattern}>
+      <CardContainer pattern={patternImage} color={stylebook.mainColor}>
         <CardUp>
           <Content>
             <Title>{name}</Title>
@@ -74,7 +89,7 @@ const ShopCard: React.FC<ShopCardProps> = ({ name, address, index }) => {
           </h2>
           <CardPhoto>
             {photos.map((src) => (
-              <Photo key={index} src={src} alt="data" />
+              <Photo src={src} alt="data" />
             ))}
           </CardPhoto>
           <ButtonBlock>

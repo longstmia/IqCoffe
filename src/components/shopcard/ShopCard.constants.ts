@@ -16,8 +16,6 @@ import pattern6 from '../../assets/pattern/square.svg';
 
 export const photos = [photo1, photo2, photo3];
 
-export const patterns = [pattern1, pattern2, pattern3, pattern4, pattern5, pattern6];
-
 // export const colors = ['#383838', '#F3B6D1', '#B1D465', '#FE6A69', '#5DD1B7', '#FFC63'];
 
 export const categories = [
