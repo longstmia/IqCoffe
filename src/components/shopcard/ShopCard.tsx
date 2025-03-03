@@ -53,7 +53,7 @@ const ShopCard: React.FC<ShopCardProps> = ({ name, address, stylebook }) => {
 
   return (
     <CardsWrapper>
-      <CardContainer pattern={patternImage} color={stylebook.mainColor}>
+      <CardContainer pattern={patternImage} color={stylebook.secondColor}>
         <CardUp>
           <Content>
             <Title>{name}</Title>

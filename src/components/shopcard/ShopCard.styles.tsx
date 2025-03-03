@@ -10,7 +10,7 @@ export const CardsWrapper = styled.div`
   gap: 16px;
   scroll-snap-type: x mandatory;
   padding-bottom: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   &:last-child {
     margin-bottom: 100px;
@@ -26,22 +26,27 @@ export const CardContainer = styled.div<CardContainerProps>`
   flex: 0 0 auto;
   width: 95%;
   scroll-snap-align: start;
+  border: 2px solid #383838;
+  border-left: none;
   border-radius: 0px 0px 15px 0px;
   overflow: visible;
   position: relative;
-  padding-bottom: 4px;
   margin-bottom: -10px;
+
+  -webkit-box-shadow: 6px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 6px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 6px 4px 8px 0px rgba(34, 60, 80, 0.2);
 `;
 
 export const CardUp = styled.div`
   position: relative;
-  top: 2px;
-  border-right: 2px solid #383838;
+  border: 2px solid #383838;
   border-left: none;
   border-radius: 0px 0px 15px 0px;
   background-color: #f9f9f5;
   padding: 16px 20px;
   width: 70%;
+  margin: -2px;
 `;
 
 export const Content = styled.div`
@@ -165,7 +170,7 @@ export const GoButton = styled.button`
   font-size: 14px;
   font-weight: 600;
   background-color: #14ad99;
-  border: 2px #383838;
+  border: 2px solid #383838;
   border-radius: 8px;
   position: absolute;
   bottom: -20px;

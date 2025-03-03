@@ -7,16 +7,7 @@ import photo1 from '../../assets/card/photo.png';
 import photo2 from '../../assets/card/photo2.png';
 import photo3 from '../../assets/card/photo3.png';
 
-import pattern1 from '../../assets/pattern/clouds.svg';
-import pattern2 from '../../assets/pattern/diamonds.svg';
-import pattern3 from '../../assets/pattern/hexagons.svg';
-import pattern4 from '../../assets/pattern/leaves.svg';
-import pattern5 from '../../assets/pattern/morphing.svg';
-import pattern6 from '../../assets/pattern/square.svg';
-
 export const photos = [photo1, photo2, photo3];
-
-// export const colors = ['#383838', '#F3B6D1', '#B1D465', '#FE6A69', '#5DD1B7', '#FFC63'];
 
 export const categories = [
   { icon: CofeIcon, name: 'Напитки' },
