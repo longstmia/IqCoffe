@@ -1,5 +1,5 @@
 const soviet = {
-  name: 'IQCoffe Советская',
+  name: 'Советская',
   slug: 'soviet',
   address: 'Советская 51 к.3',
   mode: {

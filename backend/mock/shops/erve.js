@@ -1,5 +1,5 @@
 const erve = {
-  name: 'IQCoffe Эрвье',
+  name: 'Эрвье',
   slug: 'erve',
   address: 'Эрвье, 30 к.4',
   mode: {

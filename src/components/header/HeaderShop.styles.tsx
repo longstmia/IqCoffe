@@ -14,15 +14,22 @@ export const Head = styled.header`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 0 20px;
+  border-radius: 0px 0px 15px 15px;
   z-index: 1000;
 `;
 
+export const BoxLogo = styled.div`
+  background-color: #f3f4f0;
+  border: 2px solid #383838;
+  margin-right: 30px;
+  top: -2px;
+  position: relative;
+  border-radius: 0px 0px 15px 15px;
+`;
+
 export const Logo = styled.img`
-  height: 5rem;
-  margin-top: 0;
-  padding-right: 40px;
-  align-self: flex-start;
+  height: 3rem;
+  padding: 7px;
 `;
 
 export const Text = styled.p`

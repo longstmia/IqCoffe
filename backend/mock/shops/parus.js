@@ -1,5 +1,5 @@
 const parus = {
-  name: 'IQCoffe Паруса',
+  name: 'Паруса',
   slug: 'parus',
   address: 'Малыгина, 90',
   mode: {

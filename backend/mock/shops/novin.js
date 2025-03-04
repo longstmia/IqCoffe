@@ -1,5 +1,5 @@
 const novin = {
-  name: 'IQCoffe Новин',
+  name: 'Новин',
   slug: 'novin',
   address: '50 лет Октября 57а',
   mode: {

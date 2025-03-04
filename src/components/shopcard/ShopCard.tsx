@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   CardsWrapper,
   CardContainer,
@@ -49,6 +50,8 @@ const ShopCard: React.FC<ShopCardProps> = ({ name, address, stylebook }) => {
     setIsDetailsOpen(!isDetailsOpen);
   };
 
+  const navigate = useNavigate();
+
   const patternImage = patternMap[stylebook.pattern] || '';
 
   return (
@@ -93,7 +96,17 @@ const ShopCard: React.FC<ShopCardProps> = ({ name, address, stylebook }) => {
             ))}
           </CardPhoto>
           <ButtonBlock>
-            <GoButton>GO</GoButton>
+            <GoButton
+              onClick={() =>
+                navigate(
+                  `/shop-${encodeURIComponent(
+                    name.replace(/\s+/g, '-').toLowerCase(),
+                  )}`,
+                )
+              }
+            >
+              GO
+            </GoButton>
           </ButtonBlock>
         </Details>
       </CardContainer>

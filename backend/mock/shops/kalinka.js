@@ -1,5 +1,5 @@
 const kalinka = {
-  name: 'IQCoffe Калинка',
+  name: 'Калинка',
   slug: 'kalinka',
   address: 'Республики 65',
   mode: {

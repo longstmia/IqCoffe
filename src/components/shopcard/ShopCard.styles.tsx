@@ -43,7 +43,7 @@ export const CardUp = styled.div`
   border: 2px solid #383838;
   border-left: none;
   border-radius: 0px 0px 15px 0px;
-  background-color: #f9f9f5;
+  background-color: #F3F4F0;
   padding: 16px 20px;
   width: 70%;
   margin: -2px;
@@ -74,7 +74,7 @@ export const Arrow = styled.div`
   right: 16px;
   width: 12px;
   height: 12px;
-  border: solid #ffffff;
+  border: solid #F3F4F0;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 `;

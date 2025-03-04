@@ -1,5 +1,5 @@
 const ocean = {
-  name: 'IQCoffe Океан',
+  name: 'Океан',
   slug: 'ocean',
   address: 'Республики 42',
   mode: {
