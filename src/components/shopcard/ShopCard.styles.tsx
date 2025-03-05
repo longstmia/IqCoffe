@@ -11,7 +11,11 @@ export const CardsWrapper = styled.div`
   scroll-snap-type: x mandatory;
   padding-bottom: 20px;
   margin-bottom: 10px;
+  margin-top: 10px;
 
+  &:first-child {
+    margin-top: 110px;
+  }
   &:last-child {
     margin-bottom: 100px;
   }
@@ -43,7 +47,7 @@ export const CardUp = styled.div`
   border: 2px solid #383838;
   border-left: none;
   border-radius: 0px 0px 15px 0px;
-  background-color: #F3F4F0;
+  background-color: #f3f4f0;
   padding: 16px 20px;
   width: 70%;
   margin: -2px;
@@ -74,7 +78,7 @@ export const Arrow = styled.div`
   right: 16px;
   width: 12px;
   height: 12px;
-  border: solid #F3F4F0;
+  border: solid #f3f4f0;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 `;

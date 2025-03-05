@@ -33,6 +33,11 @@ export const Logo = styled.img`
 `;
 
 export const Text = styled.p`
-  margin: 25.5px;
-  font-size: 2rem;
+  margin: 32.5px;
+  font-size: 20px;
+  font-weight: 800;
+
+  @media (max-width: 351px) {
+    font-size: 18px;
+  }
 `;

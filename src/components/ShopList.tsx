@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import api from '../shared/api/api';
+import { api, getShopList } from '../shared/api/api';
+import { Shop } from '../shared/types/shops';
 import ShopCard from './shopcard/ShopCard';
 
 export const ShopList: React.FC = () => {
-  const [shops, setShops] = useState<
-    {
-      id: number;
-      name: string;
-      address: string;
-      pattern: string;
-      stylebook: any;
-    }[]
-  >([]);
+  const [shops, setShops] = useState<Shop[]>([]);
 
   useEffect(() => {
-    api
-      .get('/shops')
+    api;
+    getShopList()
       .then((response) => {
         setShops(response.data);
       })

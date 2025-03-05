@@ -5,7 +5,7 @@ import { ShopList } from '../components/ShopList';
 const ShopListPage = () => (
   <>
     <Header />
-    <div style={{ marginTop: '7rem' }}>
+    <div>
       <ShopList />
     </div>
     <Footer />

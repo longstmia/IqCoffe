@@ -1,10 +1,12 @@
-import React from 'react';
-import { Head, Text, Logo } from './Header.styles';
+import { Head, Text, BoxLogo, Logo } from './Header.styles';
+import HedLogo from '../../assets/header/robot.svg';
 
 const Header = () => (
   <Head>
     <Text>Выберите кофейню</Text>
-    <Logo src="/assets/icons/robot.svg" alt="Логотип" />
+    <BoxLogo>
+      <Logo src={HedLogo} alt="Логотип" />
+    </BoxLogo>
   </Head>
 );
 
