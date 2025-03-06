@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Shop } from '../../../shared/types/shops';
 import {
   CardsWrapper,
   CardContainer,
@@ -20,22 +20,12 @@ import {
 } from './ShopCard.styles';
 import { photos, categories, timetable } from './ShopCard.constants';
 
-import squarePattern from '../../assets/pattern/square.svg';
-import diamondsPattern from '../../assets/pattern/diamonds.svg';
-import leavesPattern from '../../assets/pattern/leaves.svg';
-import hexagonsPattern from '../../assets/pattern/hexagons.svg';
-import cloudsPattern from '../../assets/pattern/clouds.svg';
+import squarePattern from '../../../assets/pattern/square.svg';
+import diamondsPattern from '../../../assets/pattern/diamonds.svg';
+import leavesPattern from '../../../assets/pattern/leaves.svg';
+import hexagonsPattern from '../../../assets/pattern/hexagons.svg';
+import cloudsPattern from '../../../assets/pattern/clouds.svg';
 
-interface ShopCardProps {
-  name: string;
-  address: string;
-  stylebook: {
-    mainColor: string;
-    secondColor: string;
-    opacity: string;
-    pattern: string;
-  };
-}
 const patternMap: { [key: string]: string } = {
   square: squarePattern,
   diamonds: diamondsPattern,
@@ -44,13 +34,11 @@ const patternMap: { [key: string]: string } = {
   clouds: cloudsPattern,
 };
 
-const ShopCard: React.FC<ShopCardProps> = ({ name, address, stylebook }) => {
+const ShopCard: React.FC<Shop> = ({ name, address, stylebook }) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const toggleDetails = () => {
     setIsDetailsOpen(!isDetailsOpen);
   };
-
-  const navigate = useNavigate();
 
   const patternImage = patternMap[stylebook.pattern] || '';
 
@@ -65,7 +53,7 @@ const ShopCard: React.FC<ShopCardProps> = ({ name, address, stylebook }) => {
         </CardUp>
         <Arrow onClick={toggleDetails} />
 
-        <Details style={{ display: isDetailsOpen ? 'flex' : 'none' }}>
+        <Details isOpen={isDetailsOpen}>
           <CardInfo>
             <Info>
               {categories.map(({ icon, name }) => (
@@ -97,13 +85,9 @@ const ShopCard: React.FC<ShopCardProps> = ({ name, address, stylebook }) => {
           </CardPhoto>
           <ButtonBlock>
             <GoButton
-              onClick={() =>
-                navigate(
-                  `/shop-${encodeURIComponent(
-                    name.replace(/\s+/g, '-').toLowerCase(),
-                  )}`,
-                )
-              }
+              to={`/shop-${encodeURIComponent(
+                name.replace(/\s+/g, '-').toLowerCase(),
+              )}`}
             >
               GO
             </GoButton>

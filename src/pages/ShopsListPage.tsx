@@ -1,6 +1,6 @@
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
-import { ShopList } from '../components/ShopList';
+import ShopList from '../components/shopList';
 
 const ShopListPage = () => (
   <>

@@ -1,11 +1,11 @@
-import CofeIcon from '../../assets/card/coffe.svg';
-import CakeIcon from '../../assets/card/cake.svg';
-import CornIcon from '../../assets/card/corn.svg';
-import TeaIcon from '../../assets/card/tea.svg';
+import CofeIcon from '../../../assets/card/coffe.svg';
+import CakeIcon from '../../../assets/card/cake.svg';
+import CornIcon from '../../../assets/card/corn.svg';
+import TeaIcon from '../../../assets/card/tea.svg';
 
-import photo1 from '../../assets/card/photo.png';
-import photo2 from '../../assets/card/photo2.png';
-import photo3 from '../../assets/card/photo3.png';
+import photo1 from '../../../assets/card/photo.png';
+import photo2 from '../../../assets/card/photo2.png';
+import photo3 from '../../../assets/card/photo3.png';
 
 export const photos = [photo1, photo2, photo3];
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 interface CardContainerProps {
   color: string;
@@ -83,10 +84,11 @@ export const Arrow = styled.div`
   transform: rotate(45deg);
 `;
 
-export const Details = styled.div`
-  display: flex;
+export const Details = styled.div<{ isOpen: boolean }>`
+  display: ${(props) => (props.isOpen ? 'flex' : 'none')};
   align-items: flex-start;
   flex-direction: column;
+
   gap: 20px;
   width: 100%;
 
@@ -167,7 +169,7 @@ export const ButtonBlock = styled.div`
   display: flex;
 `;
 
-export const GoButton = styled.button`
+export const GoButton = styled(Link)`
   width: 100px;
   height: 44px;
   color: #fff;
@@ -179,4 +181,10 @@ export const GoButton = styled.button`
   position: absolute;
   bottom: -20px;
   right: 20px;
+
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

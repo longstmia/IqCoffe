@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { api, getShopList } from '../shared/api/api';
-import { Shop } from '../shared/types/shops';
-import ShopCard from './shopcard/ShopCard';
+import { api, getShopList } from '../../shared/api/api';
+import { Shop } from '../../shared/types/shops';
+import ShopCard from './shopcard';
 
-export const ShopList: React.FC = () => {
+const ShopList: React.FC = () => {
   const [shops, setShops] = useState<Shop[]>([]);
 
   useEffect(() => {
@@ -36,3 +36,5 @@ export const ShopList: React.FC = () => {
     </div>
   );
 };
+
+export default ShopList;
