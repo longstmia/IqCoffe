@@ -29,6 +29,7 @@ const ShopList: React.FC = () => {
               name={shop.name}
               address={shop.address}
               stylebook={shop.stylebook}
+              categories={shop.categories}
             />
           ))}
         </div>

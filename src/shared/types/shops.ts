@@ -8,4 +8,8 @@ export interface Shop {
     opacity: string;
     pattern: string;
   };
+  categories: {
+    icon: string;
+    name: string;
+  }[];
 }

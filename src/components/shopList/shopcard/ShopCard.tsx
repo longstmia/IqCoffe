@@ -18,7 +18,7 @@ import {
   ButtonBlock,
   GoButton,
 } from './ShopCard.styles';
-import { photos, categories, timetable } from './ShopCard.constants';
+import { photos, timetable } from './ShopCard.constants';
 
 import squarePattern from '../../../assets/pattern/square.svg';
 import diamondsPattern from '../../../assets/pattern/diamonds.svg';
@@ -34,7 +34,19 @@ const patternMap: { [key: string]: string } = {
   clouds: cloudsPattern,
 };
 
-const ShopCard: React.FC<Shop> = ({ name, address, stylebook }) => {
+import CofeIcon from '../../../assets/card/coffe.svg';
+import CakeIcon from '../../../assets/card/cake.svg';
+import CornIcon from '../../../assets/card/corn.svg';
+import TeaIcon from '../../../assets/card/tea.svg';
+
+const categoryIcon: { [key: string]: string } = {
+  drinks: CofeIcon,
+  food: CakeIcon,
+  beans: CornIcon,
+  accessories: TeaIcon,
+};
+
+const ShopCard: React.FC<Shop> = ({ name, address, stylebook, categories }) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const toggleDetails = () => {
     setIsDetailsOpen(!isDetailsOpen);
@@ -56,9 +68,9 @@ const ShopCard: React.FC<Shop> = ({ name, address, stylebook }) => {
         <Details isOpen={isDetailsOpen}>
           <CardInfo>
             <Info>
-              {categories.map(({ icon, name }) => (
+              {categories?.slice(1).map(({ icon, name }) => (
                 <InfoItem key={name}>
-                  <img src={icon} alt={name} />
+                  <img src={categoryIcon[icon] || ''} alt={name} />
                   <span>{name}</span>
                 </InfoItem>
               ))}
