@@ -1,21 +1,21 @@
-import CoffeIcon from '../../assets/card/coffe.svg';
-import CakeIcon from '../../assets/card/cake.svg';
-import CornIcon from '../../assets/card/corn.svg';
-import TeaIcon from '../../assets/card/tea.svg';
+import { ReactComponent as CoffeIcon } from '../../assets/card/coffe.svg';
+import { ReactComponent as CakeIcon } from '../../assets/card/cake.svg';
+import { ReactComponent as CornIcon } from '../../assets/card/corn.svg';
+import { ReactComponent as TeaIcon } from '../../assets/card/tea.svg';
 
 type IconProps = {
-  name: "сoffeIcon" | "сakeIcon" | "сornIcon" | "еeaIcon"; 
+  name: 'drinks' | 'food' | 'beans' | 'accessories';
 };
 
-export const MyIcon = ({ name }: IconProps) => {
-  const { name: iconName } = { name };
-
-  const Icons: Record<IconProps["name"], JSX.Element> = {
-    сoffeIcon: <CoffeIcon />,
-    сakeIcon: <CakeIcon />,
-    сornIcon: <CornIcon />,
-    еeaIcon: <TeaIcon />,
+export const MyIcon = ({ name, ...props }: IconProps) => {
+  const Icons: Record<IconProps['name'], JSX.Element> = {
+    drinks: <CoffeIcon {...props} />,
+    food: <CakeIcon {...props} />,
+    beans: <CornIcon {...props} />,
+    accessories: <TeaIcon {...props} />,
   };
 
-  return Icons[iconName];
+  return Icons[name];
 };
+
+export {};

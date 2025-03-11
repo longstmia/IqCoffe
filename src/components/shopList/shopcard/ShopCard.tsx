@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Shop } from '../../../shared/types/shops';
+import { MyIcon } from '../../../shared/ui/MyIcon';
 import {
   CardsWrapper,
   CardContainer,
@@ -34,18 +35,6 @@ const patternMap: { [key: string]: string } = {
   clouds: cloudsPattern,
 };
 
-import CofeIcon from '../../../assets/card/coffe.svg';
-import CakeIcon from '../../../assets/card/cake.svg';
-import CornIcon from '../../../assets/card/corn.svg';
-import TeaIcon from '../../../assets/card/tea.svg';
-
-const categoryIcon: { [key: string]: string } = {
-  drinks: CofeIcon,
-  food: CakeIcon,
-  beans: CornIcon,
-  accessories: TeaIcon,
-};
-
 const ShopCard: React.FC<Shop> = ({ name, address, stylebook, categories }) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const toggleDetails = () => {
@@ -70,7 +59,9 @@ const ShopCard: React.FC<Shop> = ({ name, address, stylebook, categories }) => {
             <Info>
               {categories?.slice(1).map(({ icon, name }) => (
                 <InfoItem key={name}>
-                  <img src={categoryIcon[icon] || ''} alt={name} />
+                  <MyIcon
+                    name={icon as 'drinks' | 'food' | 'beans' | 'accessories'}
+                  />
                   <span>{name}</span>
                 </InfoItem>
               ))}
