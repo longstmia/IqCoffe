@@ -25,8 +25,9 @@ export const CardContainer = styled.div<CardContainerProps>`
   background-color: ${(props) => props.color};
   background-image: ${(props) =>
     props.pattern ? `url(${props.pattern})` : 'none'};
-  background-position: center;
-  background-repeat: repeat;
+  background-position: center top; 
+  background-repeat: repeat; 
+  background-attachment: local;
 
   flex: 0 0 auto;
   width: 95%;
@@ -73,7 +74,7 @@ export const Address = styled.p`
   margin: 8px 0 0;
 `;
 
-export const Arrow = styled.div`
+export const Arrow = styled.div<{ isOpen: boolean }>`
   position: absolute;
   top: 16px;
   right: 16px;
@@ -81,16 +82,23 @@ export const Arrow = styled.div`
   height: 12px;
   border: solid #f3f4f0;
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  transform: ${({ isOpen }) => (isOpen ? 'rotate(225deg)' : 'rotate(45deg)')};
+  transition: transform 0.3s ease-in-out;
 `;
 
 export const Details = styled.div<{ isOpen: boolean }>`
   display: ${(props) => (props.isOpen ? 'flex' : 'none')};
   align-items: flex-start;
   flex-direction: column;
-
   gap: 20px;
   width: 100%;
+
+  max-height: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  transform: ${({ isOpen }) =>
+    isOpen ? 'translateY(0)' : 'translateY(-10px)'};
+  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
 
   h2 {
     color: #f9f9f5;

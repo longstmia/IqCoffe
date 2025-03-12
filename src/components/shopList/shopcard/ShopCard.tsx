@@ -35,7 +35,12 @@ const patternMap: { [key: string]: string } = {
   clouds: cloudsPattern,
 };
 
-const ShopCard: React.FC<Shop> = ({ name, address, stylebook, categories }) => {
+const ShopCard: React.FC<Shop> = ({
+  name,
+  address,
+  stylebook,
+  categories,
+}) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const toggleDetails = () => {
     setIsDetailsOpen(!isDetailsOpen);
@@ -43,6 +48,7 @@ const ShopCard: React.FC<Shop> = ({ name, address, stylebook, categories }) => {
 
   const patternImage = patternMap[stylebook.pattern] || '';
 
+  
   return (
     <CardsWrapper>
       <CardContainer pattern={patternImage} color={stylebook.secondColor}>
@@ -52,7 +58,7 @@ const ShopCard: React.FC<Shop> = ({ name, address, stylebook, categories }) => {
             <Address>{address}</Address>
           </Content>
         </CardUp>
-        <Arrow onClick={toggleDetails} />
+        <Arrow onClick={toggleDetails} isOpen={isDetailsOpen} />
 
         <Details isOpen={isDetailsOpen}>
           <CardInfo>
