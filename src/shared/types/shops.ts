@@ -9,7 +9,24 @@ export interface Shop {
     pattern: string;
   };
   categories: {
+    id: number;
+    category: string;
     icon: string;
     name: string;
+  }[];
+  mode: {
+    weekday: {
+      start: string;
+      end: string;
+    };
+    free: {
+      start: string;
+      end: string;
+    };
+  };
+  photos: {
+    id: number;
+    alt: string;
+    src: string;
   }[];
 }

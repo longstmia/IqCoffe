@@ -19,7 +19,7 @@ import {
   ButtonBlock,
   GoButton,
 } from './ShopCard.styles';
-import { photos, timetable } from './ShopCard.constants';
+import { photos } from './ShopCard.constants';
 
 import squarePattern from '../../../assets/pattern/square.svg';
 import diamondsPattern from '../../../assets/pattern/diamonds.svg';
@@ -36,10 +36,13 @@ const patternMap: { [key: string]: string } = {
 };
 
 const ShopCard: React.FC<Shop> = ({
+  id,
   name,
   address,
   stylebook,
   categories,
+  mode,
+  photos,
 }) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const toggleDetails = () => {
@@ -48,7 +51,8 @@ const ShopCard: React.FC<Shop> = ({
 
   const patternImage = patternMap[stylebook.pattern] || '';
 
-  
+  const formatTime = (start: string, end: string) => `${start} - ${end}`;
+
   return (
     <CardsWrapper>
       <CardContainer pattern={patternImage} color={stylebook.secondColor}>
@@ -74,13 +78,16 @@ const ShopCard: React.FC<Shop> = ({
             </Info>
 
             <Schedule>
-              {timetable.map((time) => (
-                <div key={time.day}>
-                  <span>{time.day}</span>
-                  <span>|</span>
-                  <span>{time.time}</span>
-                </div>
-              ))}
+              <div>
+                <span>Пн-Пт</span>
+                <span>|</span>
+                <span>{formatTime(mode.weekday.start, mode.weekday.end)}</span>
+              </div>
+              <div>
+                <span>Сб-Вс</span>
+                <span>|</span>
+                <span>{formatTime(mode.free.start, mode.free.end)}</span>
+              </div>
             </Schedule>
           </CardInfo>
 
@@ -88,8 +95,8 @@ const ShopCard: React.FC<Shop> = ({
             Фотографии <br /> заведения
           </h2>
           <CardPhoto>
-            {photos.map((src) => (
-              <Photo src={src} alt="data" />
+            {photos?.map((photo) => (
+              <Photo key={photo.id} src={photo.src} alt={photo.alt} />
             ))}
           </CardPhoto>
           <ButtonBlock>

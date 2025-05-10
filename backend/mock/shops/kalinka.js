@@ -54,22 +54,22 @@ const kalinka = {
     {
       id: 1,
       alt: 'Фото заведения',
-      src: 'https://mayertrade.com.ua/img/cms/BLOGS/264-creatively-designed-cafes/creatively-designed-cafes_5.jpg',
+      src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500',
     },
     {
       id: 2,
       alt: 'Фото заведения',
-      src: '',
+      src: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=500',
     },
     {
       id: 3,
       alt: 'Фото заведения',
-      src: 'https://maralin.ru/img/catalog_covers/4398-16432099690.jpg',
+      src: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=500',
     },
     {
       id: 4,
       alt: 'Фото заведения',
-      src: 'https://mayertrade.com.ua/img/cms/BLOGS/264-creatively-designed-cafes/creatively-designed-cafes_23.jpg',
+      src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500',
     },
   ],
 };

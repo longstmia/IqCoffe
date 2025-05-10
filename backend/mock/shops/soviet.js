@@ -54,7 +54,22 @@ const soviet = {
     {
       id: 1,
       alt: 'Фото заведения',
-      src: 'https://mayertrade.com.ua/img/cms/BLOGS/264-creatively-designed-cafes/creatively-designed-cafes_27.jpg',
+      src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500',
+    },
+    {
+      id: 2,
+      alt: 'Фото заведения',
+      src: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=500',
+    },
+    {
+      id: 3,
+      alt: 'Фото заведения',
+      src: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=500',
+    },
+    {
+      id: 4,
+      alt: 'Фото заведения',
+      src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500',
     },
   ],
 };

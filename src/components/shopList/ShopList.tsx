@@ -26,10 +26,13 @@ const ShopList: React.FC = () => {
           {shops.map((shop) => (
             <ShopCard
               key={shop.id}
+              id={shop.id}
               name={shop.name}
               address={shop.address}
               stylebook={shop.stylebook}
               categories={shop.categories}
+              mode={shop.mode}
+              photos={shop.photos}
             />
           ))}
         </div>
