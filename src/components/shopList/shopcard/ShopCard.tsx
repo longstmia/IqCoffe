@@ -19,8 +19,6 @@ import {
   ButtonBlock,
   GoButton,
 } from './ShopCard.styles';
-import { photos } from './ShopCard.constants';
-
 import squarePattern from '../../../assets/pattern/square.svg';
 import diamondsPattern from '../../../assets/pattern/diamonds.svg';
 import leavesPattern from '../../../assets/pattern/leaves.svg';
@@ -84,7 +82,7 @@ const ShopCard: React.FC<Shop> = ({
                 <span>{formatTime(mode.weekday.start, mode.weekday.end)}</span>
               </div>
               <div>
-                <span>Сб-Вс</span>
+                <span>Сб-Вc</span>
                 <span>|</span>
                 <span>{formatTime(mode.free.start, mode.free.end)}</span>
               </div>
