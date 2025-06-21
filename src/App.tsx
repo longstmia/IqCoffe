@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { FontStyles } from './styles/FontStyles';
 import GlobalStyles from './GlobalStyles';
 import ShopListPage from './pages/ShopsListPage';
-import ShopPage from './pages/ShopPage';
+import ShopPage from './pages/ShopDetailsPage';
 const App = () => (
   <>
     <GlobalStyles />

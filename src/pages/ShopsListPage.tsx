@@ -5,9 +5,7 @@ import ShopList from '../components/shopList';
 const ShopListPage = () => (
   <>
     <Header />
-    <div>
       <ShopList />
-    </div>
     <Footer />
   </>
 );

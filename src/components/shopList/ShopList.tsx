@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { api, getShopList } from '../../shared/api/api';
+import {getShopList } from '../../shared/api/api';
 import { Shop } from '../../shared/types/shops';
 import ShopCard from './shopcard';
 
@@ -7,7 +7,6 @@ const ShopList: React.FC = () => {
   const [shops, setShops] = useState<Shop[]>([]);
 
   useEffect(() => {
-    api;
     getShopList()
       .then((response) => {
         setShops(response.data);
