@@ -1,0 +1,72 @@
+{
+  "name": "iqcoffe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "client": "react-scripts start",
+    "server": "npm run start --prefix backend",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "stylelint": "npx stylelint \"**/*.tsx\"",
+    "stylelint:fix": "npm run stylelint -- --fix"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^18.7.16",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.34",
+    "axios": "^0.27.2",
+    "concurrently": "^7.4.0",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^6.1.13",
+    "typescript": "^4.8.3",
+    "web-vitals": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.34",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-fp": "git+https://github.com/jfmengels/eslint-plugin-fp.git",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8",
+    "stylelint": "^14.11.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^5.0.0",
+    "stylelint-processor-styled-components": "^1.10.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

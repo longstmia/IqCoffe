@@ -1,0 +1,535 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+
+  //
+  // EXTENDS
+  //
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+
+  //
+  // PLUGINS
+  //
+  "plugins": [
+    "react",
+    "react-hooks",
+    //    "fp",
+    "jsx-a11y",
+    "@typescript-eslint/eslint-plugin",
+    "prettier"
+  ],
+
+  //
+  // PARSER
+  //
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+
+  //
+  // SETTINGS
+  //
+  "settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      },
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    },
+
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+
+    "react": {
+      "version": "detect"
+    }
+  },
+
+  //
+  // RULES
+  //
+  "rules": {
+    "react/self-closing-comp": "off",
+    // https://eslint.org/docs/latest/rules/prefer-const
+    "prefer-const": [
+      2,
+      {
+        "destructuring": "any"
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/eol-last
+    "eol-last": 1,
+
+    // https://eslint.org/docs/latest/rules/linebreak-style
+    "linebreak-style": [2, "unix"],
+
+    // https://eslint.org/docs/latest/rules/no-debugger
+    "no-debugger": 1,
+
+    // https://eslint.org/docs/latest/rules/no-console
+    "no-console": [
+      1,
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/no-trailing-spaces
+    "no-trailing-spaces": 2,
+
+    // https://eslint.org/docs/latest/rules/no-underscore-dangle
+    "no-underscore-dangle": 0,
+
+    // https://eslint.org/docs/latest/rules/quotes
+    "quotes": [1, "single"],
+
+    // https://eslint.org/docs/latest/rules/jsx-quotes
+    "jsx-quotes": [1, "prefer-double"],
+
+    // https://eslint.org/docs/latest/rules/comma-dangle
+    "comma-dangle": [1, "only-multiline"],
+
+    // https://eslint.org/docs/latest/rules/max-len
+    "max-len": [
+      1,
+      {
+        "code": 120,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/consistent-return
+    "consistent-return": [
+      1,
+      {
+        "treatUndefinedAsUnspecified": true
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/no-multiple-empty-lines
+    "no-multiple-empty-lines": [
+      1,
+      {
+        "max": 2,
+        "maxEOF": 0
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/no-param-reassign
+    "no-param-reassign": [
+      2,
+      {
+        "props": false
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/object-curly-spacing
+    "object-curly-spacing": [1, "always"],
+
+    // https://eslint.org/docs/latest/rules/object-property-newline
+    "object-property-newline": [
+      1,
+      {
+        "allowAllPropertiesOnSameLine": true
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/object-curly-newline
+    "object-curly-newline": [
+      1,
+      {
+        "ObjectExpression": {
+          "minProperties": 4,
+          "multiline": true,
+          "consistent": true
+        },
+        "ObjectPattern": {
+          "minProperties": 4,
+          "multiline": true,
+          "consistent": true
+        },
+        "ImportDeclaration": {
+          "minProperties": 4,
+          "multiline": true,
+          "consistent": true
+        },
+        "ExportDeclaration": {
+          "minProperties": 4,
+          "multiline": true,
+          "consistent": true
+        }
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/no-duplicate-imports
+    "no-duplicate-imports": 1,
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
+    "import/prefer-default-export": 1,
+    //
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/exports-last.md
+    "import/exports-last": 1,
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-absolute-path.md
+    "import/no-absolute-path": 2,
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-relative-packages.md
+    //    "import/no-relative-packages": 2,
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md
+    "import/no-unresolved": [
+      2,
+      {
+        "commonjs": true
+      }
+    ],
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-anonymous-default-export.md
+    "import/no-anonymous-default-export": [
+      2,
+      {
+        "allowObject": true,
+        "allowArray": true,
+        "allowArrowFunction": true
+      }
+    ],
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/extensions.md
+    "import/extensions": [
+      2,
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/newline-after-import.md
+    "import/newline-after-import": [
+      1,
+      {
+        "count": 2
+      }
+    ],
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/max-dependencies.md
+    "import/max-dependencies": [
+      1,
+      {
+        "max": 10,
+        "ignoreTypeImports": true
+      }
+    ],
+
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
+    "import/order": [
+      1,
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["sibling", "parent"],
+          "index",
+          "object",
+          "type"
+        ],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/sort-imports
+    //    "sort-imports": [
+    //      1,
+    //      {
+    //        "ignoreCase": false,
+    //        "ignoreDeclarationSort": true,
+    //        "ignoreMemberSort": true,
+    //        "memberSyntaxSortOrder": [
+    //          "none",
+    //          "all",
+    //          "multiple",
+    //          "single"
+    //        ],
+    //        "allowSeparatedGroups": false
+    //      }
+    //    ],
+
+    // https://reactjs.org/docs/hooks-rules.html
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1,
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
+    "react/react-in-jsx-scope": 0,
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-uses-react.md
+    "react/jsx-uses-react": 0,
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md
+    "react/jsx-first-prop-new-line": 1,
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+    "react/prop-types": 0,
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
+    "react/jsx-one-expression-per-line": 0,
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+    "react/require-default-props": [
+      1,
+      {
+        "forbidDefaultForRequired": true,
+        "ignoreFunctionalComponents": false
+      }
+    ],
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+    "react/jsx-props-no-spreading": [
+      1,
+      {
+        "html": "enforce",
+        "custom": "enforce"
+      }
+    ],
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
+    "react/jsx-indent": [
+      1,
+      2,
+      {
+        "checkAttributes": true,
+        "indentLogicalExpressions": true
+      }
+    ],
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
+    "react/jsx-indent-props": [1, 2],
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ],
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md
+    "react/jsx-sort-props": [
+      1,
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "multiline": "last",
+        "ignoreCase": true,
+        "reservedFirst": ["key", "ref"],
+
+        "noSortAlphabetically": false
+      }
+    ],
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md
+    "react/jsx-no-useless-fragment": [
+      2,
+      {
+        "allowExpressions": true
+      }
+    ],
+
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md
+    "react/jsx-curly-spacing": [
+      1,
+      {
+        "allowMultiline": false,
+        "children": {
+          "when": "always"
+        },
+        "spacing": {
+          "objectLiterals": "never"
+        },
+        "when": "always"
+      }
+    ],
+
+    // https://typescript-eslint.io/rules/adjacent-overload-signatures/
+    "@typescript-eslint/adjacent-overload-signatures": 1,
+
+    // https://typescript-eslint.io/rules/no-non-null-assertion/
+    "@typescript-eslint/no-non-null-assertion": 1,
+
+    // https://typescript-eslint.io/rules/no-confusing-non-null-assertion/
+    "@typescript-eslint/no-confusing-non-null-assertion": 1,
+
+    // https://typescript-eslint.io/rules/no-empty-function/
+    "@typescript-eslint/no-empty-function": 1,
+
+    // https://typescript-eslint.io/rules/prefer-optional-chain/
+    "@typescript-eslint/prefer-optional-chain": 1,
+
+    // https://typescript-eslint.io/rules/consistent-type-definitions/
+    "@typescript-eslint/consistent-type-definitions": [1, "interface"],
+
+    // https://eslint.org/docs/latest/rules/no-shadow
+    "no-shadow": 0,
+    // https://typescript-eslint.io/rules/no-shadow/
+    "@typescript-eslint/no-shadow": [1],
+
+    // https://eslint.org/docs/latest/rules/no-unused-vars
+    "no-unused-vars": 0,
+    // https://typescript-eslint.io/rules/no-unused-vars/
+    "@typescript-eslint/no-unused-vars": [
+      1,
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+
+    // https://eslint.org/docs/latest/rules/semi
+    "semi": 0,
+    // https://typescript-eslint.io/rules/semi/
+    "@typescript-eslint/semi": [1],
+
+    // https://eslint.org/docs/latest/rules/indent
+    "indent": 0,
+    // https://typescript-eslint.io/rules/indent/
+    "@typescript-eslint/indent": [
+      1,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+
+    // https://typescript-eslint.io/rules/member-delimiter-style/
+    "@typescript-eslint/member-delimiter-style": [
+      2,
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        },
+        "multilineDetection": "brackets"
+      }
+    ],
+
+    // https://typescript-eslint.io/rules/type-annotation-spacing/
+    "@typescript-eslint/type-annotation-spacing": [
+      1,
+      {
+        "before": false,
+        "after": true,
+        "overrides": {
+          "arrow": {
+            "before": true,
+            "after": true
+          }
+        }
+      }
+    ],
+
+    // https://typescript-eslint.io/rules/array-type/
+    "@typescript-eslint/array-type": [
+      1,
+      {
+        "default": "array",
+        "readonly": "generic"
+      }
+    ],
+
+    // https://typescript-eslint.io/rules/member-ordering/
+    "@typescript-eslint/member-ordering": [
+      1,
+      {
+        "default": ["signature", "field", "constructor", "method"]
+      }
+    ],
+
+    // https://typescript-eslint.io/rules/sort-type-union-intersection-members/
+    "@typescript-eslint/sort-type-union-intersection-members": [
+      1,
+      {
+        "checkIntersections": true,
+        "checkUnions": true,
+        "groups": [
+          "named",
+          "keyword",
+          "operator",
+          "literal",
+          "import",
+          "conditional",
+          "intersection",
+          "union",
+          "object",
+          "tuple",
+          "nullish",
+          "function"
+        ]
+      }
+    ],
+
+    // https://typescript-eslint.io/rules/ban-ts-comment/
+    "@typescript-eslint/ban-ts-comment": [
+      2,
+      {
+        "ts-ignore": "allow-with-description",
+        "ts-nocheck": "allow-with-description",
+        "ts-check": "allow-with-description"
+      }
+    ],
+
+    // https://typescript-eslint.io/rules/method-signature-style/
+    "@typescript-eslint/method-signature-style": [2, "property"],
+
+    // https://typescript-eslint.io/rules/consistent-indexed-object-style/
+    // https://typescript-eslint.io/rules/consistent-indexed-object-style/
+    "@typescript-eslint/consistent-indexed-object-style": [
+      0,
+      "index-signature"
+    ],
+
+    "prettier/prettier": 1
+  }
+}
